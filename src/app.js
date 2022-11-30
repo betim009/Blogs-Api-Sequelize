@@ -1,6 +1,6 @@
 const express = require('express');
 
-// ...
+// ... O hexa é nosso
 
 const app = express();
 
