@@ -12,7 +12,8 @@ app.use(express.json());
 
 // ...
 app.get('/user', validateToken, userController.getUsers);
-app.post('/login', validateLogin, loginController.login);
+app.get('/user/:id', validateToken, userController.getById);
 app.post('/user', emailExist, validateUser, userController.createUser);
+app.post('/login', validateLogin, loginController.login);
 
 module.exports = app;
