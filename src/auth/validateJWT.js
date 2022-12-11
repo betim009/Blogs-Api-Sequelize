@@ -18,7 +18,7 @@ const validateToken = async (req, res, next) => {
   const token = req.header('Authorization');
 
   if (!token) {
-    return res.status(401).json({ error: 'Token não encontrado' });
+    return res.status(401).json({ message: 'Token not found' });
   }
 
   try {
@@ -27,7 +27,7 @@ const validateToken = async (req, res, next) => {
     req.decoded = decoded;
     next();
   } catch (err) {
-    return res.status(401).json({ message: err.message });
+    return res.status(401).json({ message: 'Expired or invalid token' });
   }
 };
 
