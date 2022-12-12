@@ -11,8 +11,6 @@ const login = async (req, res) => {
     }
     const token = await createToken(email);
 
-    console.log(token);
-
     return res.status(200).json({ token });
   } catch (err) {
     console.log(err);
