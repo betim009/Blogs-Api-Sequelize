@@ -19,7 +19,7 @@ const getUsers = async (_req, res) => {
         const users = await userService.getUsers();
         return res.status(200).json(users);
     } catch (err) {
-        res.status(500).json({ message: 'Ocorreu um erro' });
+        return res.status(500).json({ message: 'Erro interno', error: err.message });
     }
 };
 
@@ -33,7 +33,7 @@ const getById = async (req, res) => {
         }
         return res.status(200).send(user);
     } catch (err) {
-        res.status(500).json({ message: 'Ocorreu um erro' });
+        return res.status(500).json({ message: 'Erro interno', error: err.message });
     }
 };
 

@@ -18,7 +18,7 @@ const getCategories = async (_req, res) => {
         const categories = await categoryService.getCategories();
         return res.status(200).json(categories);
     } catch (err) {
-        res.status(500).json({ message: 'Ocorreu um erro' });
+        return res.status(500).json({ message: 'Erro interno', error: err.message });
     }
 };
 
