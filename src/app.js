@@ -20,5 +20,6 @@ app.post('/user', emailExist, validateUser, userController.createUser);
 app.post('/login', validateLogin, loginController.login);
 
 app.post('/categories', validateToken, categoryController.createCategory);
+app.get('/categories', validateToken, categoryController.getCategories);
 
 module.exports = app;
