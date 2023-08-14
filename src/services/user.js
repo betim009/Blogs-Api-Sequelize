@@ -15,9 +15,9 @@ const findByEmail = async (email) => {
 const findById = async (id) => {
     const user = await User.findOne({ 
         where: { id }, attributes: { exclude: ['password'] }, 
-      });
+    });
     
-      return user;
+    return user;
 };
 
 const getUsers = async () => {
